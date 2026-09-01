@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR" >
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kael — portfolio</title>
+<meta name="description" content="Portfolio: projetos, stack e contato.">
+<script>
+  // Aplica o tema antes do primeiro paint para evitar flash.
+  // Segue a preferencia do sistema, a menos que o usuario ja tenha escolhido.
+  try {
+    var t = localStorage.getItem('theme');
+    if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.dataset.theme = t;
+  } catch (e) {
+    document.documentElement.dataset.theme = 'light';
+  }
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button id="theme-toggle" type="button" aria-live="polite">[ dark ]</button>
+
+<div class="app-shell">
+
+<aside class="sidebar">
+  <img class="avatar" src="img/KAEL.jpeg" alt="" width="96" height="96">
+  <h1 class="name">kael<span class="cursor" aria-hidden="true"></span></h1>
+  <div>
+    <p class="tagline">engenharia de software · backend · ia</p>
+    <p class="tagline-sub">homelab · self-hosting</p>
+  </div>
+
+  <p class="motd" id="motd"><span class="prompt">$</span> uptime</p>
+
+  <nav aria-label="Seções">
+    <ul class="nav">
+      <li><a href="#projetos"><span class="num">00.</span> projetos</a></li>
+      <li><a href="#stack"><span class="num">01.</span> stack</a></li>
+      <li><a href="#contato"><span class="num">02.</span> contato</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main class="content">
+
+  <footer>
+    <span class="prompt">$</span> exit
+  </footer>
+
+</main>
+
+</div>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
