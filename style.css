@@ -125,6 +125,31 @@ section:last-of-type { border-bottom: none; }
 h2 { font-size: 1rem; margin: 0 0 1rem; font-weight: 600; }
 .prompt { color: var(--accent); margin-right: 0.5em; }
 
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem 2rem;
+}
+.stack-grid h3 {
+  margin: 0 0 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fg-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.stack-list, .contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.stack-list li::before { content: "- "; color: var(--fg-dim); }
+.contact li { display: flex; gap: 0.5em; margin-bottom: 0.3rem; }
+.contact .key { color: var(--fg-dim); min-width: 5em; }
+
+footer { color: var(--fg-dim); }
+
 /* grade de projetos */
 
 #project-list {
@@ -266,4 +291,10 @@ h2 { font-size: 1rem; margin: 0 0 1rem; font-weight: 600; }
     border-bottom: 1px solid var(--border);
   }
   .avatar { width: 48px; height: 48px; }
+  .nav { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
+  .stack-grid { grid-template-columns: 1fr 1fr; gap: 1.25rem 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .stack-grid { grid-template-columns: 1fr; }
 }
