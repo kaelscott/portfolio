@@ -1,5 +1,6 @@
 // Edite este array para adicionar/remover projetos.
-// `thumb`, `meta`, `live` e `repo` sao opcionais — omita o que nao tiver.
+// `thumb`, `meta`, `live`, `repo` e `since` sao opcionais — omita o que nao tiver.
+// `since` = data em que o projeto entrou no ar (YYYY-MM-DD), usada no uptime.
 export const projects = [
   {
     name: "bem-te-vi",
@@ -7,6 +8,7 @@ export const projects = [
     thumb: "img/projects/bem-te-vi.png",
     stack: ["Python", "FastAPI", "React", "PostgreSQL", "Gemini API", "Docker"],
     live: "https://bem-te-vi.pages.dev/",
+    since: "2026-08-28",
   },
   {
     name: "monoto",

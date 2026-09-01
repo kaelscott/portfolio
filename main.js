@@ -1,11 +1,14 @@
 import { projects } from "./projects.js";
 
 // --- motd (uptime) ---
-// Ajuste LAUNCH_DATE para a data em que o site foi publicado.
-const LAUNCH_DATE = new Date("2026-09-01");
-const days = Math.max(0, Math.floor((Date.now() - LAUNCH_DATE) / 86400000));
-// "no ar" conta so quem tem link live — projeto em desenvolvimento nao entra.
-const online = projects.filter((p) => p.live).length;
+// "no ar" = projeto com link live. O uptime conta desde o mais antigo deles.
+const live = projects.filter((p) => p.live);
+const online = live.length;
+const oldest = live
+  .map((p) => p.since && Date.parse(p.since))
+  .filter(Boolean)
+  .sort((a, b) => a - b)[0];
+const days = oldest ? Math.max(0, Math.floor((Date.now() - oldest) / 86400000)) : 0;
 const motd = document.getElementById("motd");
 if (motd) {
   motd.textContent = "";
