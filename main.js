@@ -2,8 +2,10 @@ import { projects } from "./projects.js";
 
 // --- motd (uptime) ---
 // Ajuste LAUNCH_DATE para a data em que o site foi publicado.
-const LAUNCH_DATE = new Date("2026-08-29");
+const LAUNCH_DATE = new Date("2026-09-01");
 const days = Math.max(0, Math.floor((Date.now() - LAUNCH_DATE) / 86400000));
+// "no ar" conta so quem tem link live — projeto em desenvolvimento nao entra.
+const online = projects.filter((p) => p.live).length;
 const motd = document.getElementById("motd");
 if (motd) {
   motd.textContent = "";
@@ -12,7 +14,7 @@ if (motd) {
   prompt.textContent = "$";
   motd.appendChild(prompt);
   motd.appendChild(document.createTextNode(
-    ` uptime\n up ${days} dia${days === 1 ? "" : "s"} · ${projects.length} projeto${projects.length === 1 ? "" : "s"} no ar`
+    ` uptime\n up ${days} dia${days === 1 ? "" : "s"} · ${online} projeto${online === 1 ? "" : "s"} no ar`
   ));
 }
 
