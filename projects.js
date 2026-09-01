@@ -8,7 +8,7 @@ export const projects = [
     thumb: "img/projects/bem-te-vi.png",
     stack: ["Python", "FastAPI", "React", "PostgreSQL", "Gemini API", "Docker"],
     live: "https://bem-te-vi.pages.dev/",
-    since: "2026-08-28",
+    since: "2026-08-29",
   },
   {
     name: "monoto",
